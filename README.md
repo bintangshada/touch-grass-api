@@ -21,7 +21,11 @@ npm install
 
 #### Setup .env File and import Database
 You will find a .env.example file. Paste the contents of that into a file named .env in the same directory. 
-Fill in the variables to fit your application. Import the database file from app/database/activity.sql to your device.
+Fill in the variables to fit your application. Import manual the database file from app/database/activity.sql to your device.
+
+```bash
+touch .env
+```
 
 ---
 
