@@ -2,7 +2,7 @@
 I need touch some grass
 
 ## About
-REST API for people who needs touch some grass, inspired by [Bored-API](https://www.boredapi.com/), make with [NodeJS](https://nodejs.org/), [ExpressJS](https://expressjs.com/) and [MySQL](https://www.mysql.com/). The output is an activity you can do outside based on the weather taken from [OpenWeather](https://openweathermap.org/) in your city.
+Simple REST API for people who needs touch some grass, inspired by [Bored-API](https://www.boredapi.com/), make with [NodeJS](https://nodejs.org/), [ExpressJS](https://expressjs.com/) and [MySQL](https://www.mysql.com/). The output is an activity you can do outside based on the weather taken from [OpenWeather](https://openweathermap.org/) in your city.
 ##### ORM Database  : Sequelize
 
 ---
