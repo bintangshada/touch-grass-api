@@ -24,7 +24,7 @@ exports.randomActivity = async (req, res) => {
 
     if (
       [
-        "Thunderstrom",
+        "Thunderstorm",
         "Squall",
         "Haze",
         "Dust",
@@ -121,6 +121,7 @@ exports.defaultResponse = async (req,res) => {
       return res.status(200).send({
         message: "I think stay at home is not that bad",
         status: 200,
+        city,
       });
     }
 
@@ -138,6 +139,7 @@ exports.defaultResponse = async (req,res) => {
       return res.status(200).send({
         message: "It's up to you now, the weather isn't that good, right?",
         status: 200,
+        city
       });
     }
 
