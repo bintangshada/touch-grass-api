@@ -72,6 +72,7 @@ exports.randomActivity = async (req, res) => {
       message: randomData,
       status: 200,
       temperature: temperature,
+      city
     });
   } catch (err) {
     console.error(err);
