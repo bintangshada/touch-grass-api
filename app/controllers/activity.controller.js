@@ -84,8 +84,14 @@ exports.randomActivity = async (req, res) => {
 
 exports.defaultResponse = async (req,res) => {
   try {
+    const ipAddress = await axios.get(
+      `https://ipapi.co/json/`
+    );
+
+    const city = ipAddress.data.city;
+
     const weatherResponse = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=Jakarta&appid=${process.env.OPENWEATHER_API_KEY}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.OPENWEATHER_API_KEY}`
     );
     const weather = weatherResponse.data.weather[0].main;
     const weatherDesc = weatherResponse.data.weather[0].description;
@@ -102,7 +108,7 @@ exports.defaultResponse = async (req,res) => {
 
     if (
       [
-        "Thunderstrom",
+        "Thunderstorm",
         "Squall",
         "Haze",
         "Dust",
@@ -150,6 +156,7 @@ exports.defaultResponse = async (req,res) => {
       message: randomData,
       status: 200,
       temperature: temperature,
+      city
     });
   } catch (err) {
     console.error(err);
