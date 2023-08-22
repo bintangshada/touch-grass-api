@@ -37,6 +37,9 @@ exports.randomActivity = async (req, res) => {
       return res.status(200).send({
         message: "I think stay at home is not that bad",
         status: 200,
+        weather,
+        temperature: temperature,
+        city
       });
     }
 
@@ -54,6 +57,9 @@ exports.randomActivity = async (req, res) => {
       return res.status(200).send({
         message: "It's up to you now, the weather isn't that good, right?",
         status: 200,
+        weather,
+        temperature: temperature,
+        city
       });
     }
 
@@ -76,6 +82,13 @@ exports.randomActivity = async (req, res) => {
     });
   } catch (err) {
     console.error(err);
+
+    if (err.response && err.response.status === 404) {
+      return res.status(404).send({
+        message: "City not found or you entered the wrong city name",
+        status: 404,
+      });
+    }
     return res.status(500).send({
       message: err.message,
     });
@@ -122,7 +135,9 @@ exports.defaultResponse = async (req,res) => {
       return res.status(200).send({
         message: "I think stay at home is not that bad",
         status: 200,
-        city,
+        weather,
+        temperature: temperature,
+        city
       });
     }
 
@@ -140,6 +155,8 @@ exports.defaultResponse = async (req,res) => {
       return res.status(200).send({
         message: "It's up to you now, the weather isn't that good, right?",
         status: 200,
+        weather,
+        temperature: temperature,
         city
       });
     }
